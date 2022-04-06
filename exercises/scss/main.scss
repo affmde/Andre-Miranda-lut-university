@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 body{
     @include background;
@@ -35,10 +36,10 @@ main{
         font-size: 2.5rem;
     }
     #homepage-Miranda{
-        color: rgb(177, 193, 37);
+        color: $secondary-color;
     }
     i:hover{
-        color: rgb(177, 193, 37);
+        color: $secondary-color;
         cursor: pointer;
     }
 

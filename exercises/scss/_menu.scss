@@ -31,3 +31,96 @@
     }
 }
 
+// Menu overlay
+
+.menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+
+    &.show{
+        visibility: visible;
+    }
+
+    &-branding, 
+    &-nav{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+        @include slideTransition;
+    }
+
+    &-nav{
+        margin: 0;
+        padding:0;
+        background: rgba(darken($primary-color, 5), 0.9);
+        transform: translate3d(0, -100%, 0);
+
+        &.show{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    &-branding{
+        background: rgba($primary-color, 0.9);
+        transform: translate3d(0, 100%, 0);
+        @include slideTransition;
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+
+        .portrait{
+            width: 250px;
+            height: 250px;
+            background: url(/dist/img/me.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            border: 3px solid $secondary-color;
+        }
+    }
+
+    .nav-item{
+        transform: translate3d(600px, 0, 0);
+        @include slideTransition;
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+
+        &.current{
+            color: $secondary-color;
+        }
+    }
+
+    .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: white;
+        text-decoration: none;
+        @include slideTransition;
+
+    }
+
+    .nav-item:hover{
+        color: $secondary-color;
+        transition: color 0.1s linear;
+    }
+}
+
+@for $x from 1 to 4 {
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s;
+    }
+}

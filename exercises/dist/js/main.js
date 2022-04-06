@@ -6,21 +6,19 @@ const navItem = document.querySelectorAll('.nav-item');
 
 let showMenu = false;
 
-
 const toggleMenu = () => {
-    if(!showMenu){
+    if(showMenu===false){
         menuBtn.classList.add('close');
-        menu.classList.add('close');
-        menuNav.classList.add('close');
-        menuBranding.classList.add('close');
+        menu.classList.add('show');
+        menuNav.classList.add('show');
+        menuBranding.classList.add('show');
         navItem.forEach(item=> item.classList.add('show'))
-
         showMenu=true
     }else{
         menuBtn.classList.remove('close');
-        menu.classList.remove('close');
-        menuNav.classList.remove('close');
-        menuBranding.classList.remove('close');
+        menu.classList.remove('show');
+        menuNav.classList.remove('show');
+        menuBranding.classList.remove('show');
         navItem.forEach(item=> item.classList.remove('show'))
 
         showMenu=false
