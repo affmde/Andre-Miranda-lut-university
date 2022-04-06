@@ -4,26 +4,28 @@
     right: 35px;
     top: 35px;
     cursor: pointer;
+    transition: all 0.35s linear;
 
     .btn-line{
         width: 28px;
         height: 3px;
-        margin: 0 0 5px 0;
+        margin: 5px 0 5px 0;
         background: white;
+        transition: all 0.35s linear;
     }
 
     &.close{
         transform: rotate(180deg);
-
+        
         .btn-line{
             &:nth-child(1){
-                background: red;
+                transform: rotate(45deg) translate(5px, 5px);
             }
             &:nth-child(2){
-                background: red;
+                display: none;
             }
             &:nth-child(3){
-                background: red;
+                transform: rotate(-45deg) translate(0px, -1px);
             }
         }
     }

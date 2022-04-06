@@ -3,20 +3,22 @@
   z-index: 99;
   right: 35px;
   top: 35px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.35s linear; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
-    margin: 0 0 5px 0;
-    background: white; }
+    margin: 5px 0 5px 0;
+    background: white;
+    transition: all 0.35s linear; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      background: red; }
+      transform: rotate(45deg) translate(5px, 5px); }
     .menu-btn.close .btn-line:nth-child(2) {
-      background: red; }
+      display: none; }
     .menu-btn.close .btn-line:nth-child(3) {
-      background: red; }
+      transform: rotate(-45deg) translate(0px, -1px); }
 
 body {
   background: #444;

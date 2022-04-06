@@ -6,7 +6,7 @@ const navItem = document.querySelectorAll('.nav-item');
 
 let showMenu = false;
 
-menuBtn.addEventListener('click', toggleMenu);
+
 const toggleMenu = () => {
     if(!showMenu){
         menuBtn.classList.add('close');
@@ -26,7 +26,7 @@ const toggleMenu = () => {
         showMenu=false
     }
 }
-
+menuBtn.addEventListener('click', toggleMenu);
 
 
 
