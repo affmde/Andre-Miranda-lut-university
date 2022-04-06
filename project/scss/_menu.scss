@@ -1,0 +1,31 @@
+.menu-btn{
+    position: absolute;
+    z-index: 99;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+
+    .btn-line{
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: white;
+    }
+
+    &.close{
+        transform: rotate(180deg);
+
+        .btn-line{
+            &:nth-child(1){
+                background: red;
+            }
+            &:nth-child(2){
+                background: red;
+            }
+            &:nth-child(3){
+                background: red;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,45 @@
+@import 'config';
+@import 'menu';
+
+body{
+    @include background;
+    background: $primary-color;
+    color: white;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+
+
+#header{
+    position: relative;
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+}
+
+main{
+    padding: 20vh;
+    h1{
+        font-size: 5rem;
+    }
+
+    h4{
+        font-size: 2.5rem;
+    }
+    #homepage-Miranda{
+        color: rgb(177, 193, 37);
+    }
+    i:hover{
+        color: rgb(177, 193, 37);
+        cursor: pointer;
+    }
+
+}

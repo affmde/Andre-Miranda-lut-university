@@ -1,0 +1,59 @@
+.menu-btn {
+  position: absolute;
+  z-index: 99;
+  right: 35px;
+  top: 35px;
+  cursor: pointer; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: white; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      background: red; }
+    .menu-btn.close .btn-line:nth-child(2) {
+      background: red; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      background: red; }
+
+body {
+  background: #444;
+  color: white; }
+  body#bg-img {
+    background: url(/dist/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+  body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.8);
+    z-index: -1; }
+
+h1 {
+  font-size: 2rem; }
+
+#header {
+  position: relative; }
+  #header li {
+    list-style: none; }
+  #header a {
+    text-decoration: none;
+    color: inherit; }
+
+main {
+  padding: 20vh; }
+  main h1 {
+    font-size: 5rem; }
+  main h4 {
+    font-size: 2.5rem; }
+  main #homepage-Miranda {
+    color: #b1c125; }
+  main i:hover {
+    color: #b1c125;
+    cursor: pointer; }
