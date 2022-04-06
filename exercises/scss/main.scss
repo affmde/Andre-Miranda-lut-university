@@ -1,11 +1,13 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
+
 
 body{
     @include background;
     background: $primary-color;
-    color: white;
+    color: set-text-color($primary-color);
+    margin: 0;
+    padding: 0;
 }
 
 h1{
@@ -28,12 +30,13 @@ h1{
 
 main{
     padding: 20vh;
+    min-height: calc(100vh-60px);
     h1{
         font-size: 5rem;
     }
 
     h4{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     #homepage-Miranda{
         color: $secondary-color;
@@ -44,3 +47,57 @@ main{
     }
 
 }
+
+
+//About page editions
+#about{
+    padding: 1vh 5vw;
+}
+.about-info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image{
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: 3px solid $secondary-color;
+        width: 250px;
+    }
+    
+    .bio{
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    
+    .job-1{
+        grid-area: job1;
+    }
+    .job-2{
+        grid-area: job2;
+    }
+    .job-3{
+        grid-area: job3;
+    }
+    
+    .job{
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: 5px solid $secondary-color;
+    }
+}
+
+#main-footer{
+    text-align: center;
+    padding: 1rem;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+
+@import 'mobile';

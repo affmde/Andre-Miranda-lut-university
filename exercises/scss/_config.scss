@@ -23,6 +23,14 @@ $useBgImg: true;
     }
 }
 
+@function set-text-color($color){
+    @if(lightness($color) > 40){
+        @return black;
+    }@else{
+        @return white;
+    }
+}
+
 @mixin slideTransition {
     transition: all 0.35s linear;
 }
