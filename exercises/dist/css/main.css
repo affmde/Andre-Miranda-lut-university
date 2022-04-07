@@ -92,7 +92,8 @@ body {
   background: #444;
   color: white;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
   body#bg-img {
     background: url(/dist/img/background.jpg);
     background-repeat: no-repeat;
@@ -106,6 +107,11 @@ body {
     height: 100%;
     background-color: rgba(68, 68, 68, 0.8);
     z-index: -1; }
+  body li {
+    list-style: none; }
+  body a {
+    text-decoration: none;
+    color: inherit; }
 
 h1 {
   font-size: 2rem; }
@@ -159,12 +165,77 @@ main {
     padding: 0.5rem;
     border-bottom: 5px solid #b1c125; }
 
+#work {
+  padding-top: 1vh; }
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects .item a img {
+    width: 100%;
+    border: 3px solid white; }
+    .projects .item a img:hover {
+      opacity: 0.5;
+      border: 3px solid #b1c125;
+      transition: all 0.35s linear; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #b1c125;
+    color: black; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #fff; }
+
+#contact {
+  padding-top: 1vh; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px solid white;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.35s linear; }
+    .boxes div span {
+      color: #b1c125; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #b1c125;
+      color: black; }
+      .boxes div:hover span {
+        color: black;
+        transition: all 0.35s linear; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #2b2b2b;
   color: white;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -191,4 +262,10 @@ main {
       width: 25vh; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  .projects {
     grid-template-columns: 1fr; } }
