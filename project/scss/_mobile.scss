@@ -1,0 +1,113 @@
+@include mediaSm {
+    body{
+        overflow-x: hidden;
+        text-align: center;
+        height: 100%;
+        h1{
+            font-size: 3rem;
+            margin: 0;
+        }
+        h2{
+            font-size: 1.3rem;
+        }
+        
+    }
+
+    main{
+        padding: 15vh 5vw;
+        min-height: 100vh;
+        img{
+            width: 50vw;
+            height: 50vw;
+            margin: 5vh 0;
+        }
+    }
+
+    .menu{
+        .logo-info, .menu-nav{
+            width: 100vw;
+            background: rgba(darken($primary-color, 5), 1);
+        }
+
+        .logo-info .logo{
+            width: 50vw;
+        }
+    }
+}
+@include mediaMd {
+    body{
+        overflow-x:hidden;
+        text-align: center;
+        height: 100%;
+        h1{
+            font-size: 4rem;
+            margin: 0;
+        }
+        h2{
+            font-size: 1.3rem;
+        }
+        
+    }
+
+    main{
+        padding: 15vh 5vw;
+        min-height: 100vh;
+        img{
+            width: 50vw;
+            height: 50vw;
+            margin: 5vh 0;
+        }
+    }
+
+    .menu{
+        .logo-info, .menu-nav{
+            width: 100vw;
+            background: rgba(darken($primary-color, 5), 1);
+        }
+
+        .logo-info .logo{
+            width: 50vw;
+        }
+    }
+}
+
+@include mediaLg {
+    body{
+        overflow-x:hidden;
+        text-align: center;
+        height: 100%;
+        h1{
+            font-size: 5rem;
+            margin: 0;
+        }
+        h2{
+            font-size: 2rem;
+        }
+        
+    }
+
+    main{
+        padding: 15vh 5vw;
+        min-height: 100vh;
+        img{
+            width: 50vw;
+            height: 50vw;
+            margin: 5vh 0;
+        }
+    }
+
+    .menu{
+        .logo-info, .menu-nav{
+            width: 100vw;
+            background: rgba(darken($primary-color, 5), 1);
+        }
+
+        .logo-info .logo{
+            width: 50vw;
+        }
+    }
+
+}
+@include mediaXl {
+    
+}

@@ -1,0 +1,124 @@
+.menu-btn{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+    @include linearTransition;
+
+    .btn-line{
+        background: white ;
+        width: 40px;
+        height: 3px;
+        margin: 10px 0 10px 0;
+        @include linearTransition
+    }
+
+    &.close{
+        transform: rotate(180deg);
+
+        .btn-line{
+            &:nth-child(1){
+                transform: rotate(45deg) translate(9.5px,8px);
+            }
+            &:nth-child(2){
+                display: none;
+            }
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(3px,3px);
+            }
+        }
+    }
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    height: 100vh;
+    &.show{
+        visibility: visible;
+    }
+
+    .logo-info, .menu-nav{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        overflow: hidden;
+        @include linearTransition;
+    }
+
+    .menu-nav{
+        margin: 0;
+        padding:0;
+        background: rgba(darken($primary-color, 5), 0.9);
+        transform: translate3d(100%,0, 0);
+        height: 75vh;
+
+        &.show{
+            transform: translate3d(0, 0, 0);
+        }
+
+        .nav-item{
+            list-style: none;
+            margin: 2vh 0;
+
+            .nav-link{
+                text-decoration: none;
+                color: set-text-color($primary-color);
+                font-size: 2rem;
+                font-weight: 300;
+                letter-spacing: 1px;
+
+                &:hover{
+                    color: $secondary-color;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .logo-info{
+        background: rgba($primary-color, 0.9);
+        transform: translate3d(100%, 0, 0);
+        height: 25vh;
+        @include linearTransition;
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+
+        .logo{
+            width: 20vw;
+            height: 18vh;
+            background: url(/dist/img/logo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 3px solid $secondary-color;
+            @include linearTransition;
+        }
+    }
+    
+    .nav-item{
+        transform: translate3d(600px, 0, 0);
+        @include linearTransition;
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+
+        &.current{
+            color: $secondary-color;
+        }
+    }
+
+}
+
+@for $x from 1 to 5 {
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s;
+    }
+}

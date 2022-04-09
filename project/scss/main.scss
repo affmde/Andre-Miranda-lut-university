@@ -1,0 +1,66 @@
+@import 'config';
+@import 'menu'; 
+
+
+body{
+    @include background;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    h1{
+        font-size: 5rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        margin: 5vh 0;
+    }
+
+    h2{
+        font-size: 2rem;
+        font-weight: 100;
+        letter-spacing: 1px;
+    }
+}
+
+
+main{
+    color: set-text-color($primary-color);
+    padding: 5vh 20vw;
+
+    span{
+        color: $secondary-color;
+    }
+
+    img{
+        width:40vh;
+        border-radius: 50%;
+        border: 3px solid $secondary-color;
+        margin: 5vh 0;
+    }
+    
+    .text .icons i{
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+}
+
+
+//Footer
+
+.main-footer{
+    height: 5vh;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@import 'mobile';

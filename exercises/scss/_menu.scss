@@ -119,7 +119,7 @@
     }
 }
 
-@for $x from 1 to 4 {
+@for $x from 1 to 5 {
     .nav-item:nth-child(#{$x}){
         transition-delay: $x * 0.1s;
     }
