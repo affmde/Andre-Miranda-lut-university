@@ -25,7 +25,8 @@
   top: 0;
   right: 0;
   visibility: hidden;
-  height: 100vh; }
+  height: 100vh;
+  z-index: 98; }
   .menu.show {
     visibility: visible; }
   .menu .logo-info, .menu .menu-nav {
@@ -91,6 +92,9 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s; }
+
 body {
   margin: 0;
   padding: 0;
@@ -124,7 +128,7 @@ main {
   padding: 5vh 20vw; }
   main span {
     color: rgba(115, 218, 60, 0.871); }
-  main img {
+  main .andreMiranda-pic {
     width: 40vh;
     border-radius: 50%;
     border: 3px solid rgba(115, 218, 60, 0.871);
@@ -135,6 +139,86 @@ main {
     cursor: pointer; }
     main .text .icons i:hover {
       color: rgba(115, 218, 60, 0.871); }
+
+.season-container {
+  padding: 4vh 3vw; }
+  .season-container .grid-container {
+    grid-area: 'heading' 'pics';
+    grid-template-columns: 1fr;
+    margin: 10vh auto; }
+    .season-container .grid-container .season-heading {
+      grid-area: heading;
+      margin: 10vh auto;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas: "pic des des";
+      grid-template-columns: repeat(3, 1fr); }
+      .season-container .grid-container .season-heading .season-description {
+        grid-area: des;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 100;
+        margin: 0; }
+      .season-container .grid-container .season-heading .heading-pic {
+        grid-area: pic;
+        width: 100%; }
+    .season-container .grid-container .seasons-gallery {
+      grid-area: pics;
+      display: grid;
+      grid-template-areas: 'title' 'pics';
+      grid-template-rows: 1fr; }
+      .season-container .grid-container .seasons-gallery .season-gallery {
+        grid-area: title;
+        color: rgba(115, 218, 60, 0.871);
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 2px; }
+      .season-container .grid-container .seasons-gallery .season-pic-container {
+        grid-area: pics;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        justify-items: flex-end; }
+        .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+          width: 30%;
+          margin: 1vh 1vw; }
+
+.middle-section {
+  margin: 10vh 10vw;
+  display: flex;
+  flex-wrap: wrap; }
+  .middle-section .facts, .middle-section .slideshow {
+    width: 50%; }
+  .middle-section .facts {
+    text-align: start; }
+    .middle-section .facts .facts-list {
+      width: 70%;
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      color: rgba(115, 218, 60, 0.871); }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 10px 0;
+        list-style: none;
+        color: white; }
+  .middle-section .slideshow {
+    position: relative; }
+    .middle-section .slideshow #imageSlideshow {
+      width: 100%; }
+    .middle-section .slideshow .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.705);
+      cursor: pointer; }
+      .middle-section .slideshow .arrow:hover {
+        color: white;
+        transform: scale(1.05);
+        transition: all 0.35s linear; }
+    .middle-section .slideshow .arrow-front {
+      right: 0; }
 
 .main-footer {
   height: 5vh;
@@ -165,7 +249,29 @@ main {
     width: 100vw;
     background: #100f0f; }
   .menu .logo-info .logo {
-    width: 50vw; } }
+    width: 50vw; }
+  main.season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    main.season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      main.season-container .grid-container .season-heading .season-description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: left;
+        margin: 0 5vw; }
+    main.season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 100%;
+      margin: 1vh 10vw; }
+  main .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    main .middle-section .facts, main .middle-section .slideshow {
+      width: 100%; }
+    main .middle-section .slideshow .arrow {
+      top: 10%; } }
 
 @media screen and (max-width: 768px) {
   body {
@@ -188,7 +294,34 @@ main {
     width: 100vw;
     background: #100f0f; }
   .menu .logo-info .logo {
-    width: 50vw; } }
+    width: 50vw; }
+  .season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    .season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      .season-container .grid-container .season-heading .season-description {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: left;
+        margin: 0 5vw; }
+    .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 100%;
+      margin: 1vh 10vw; }
+  .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    .middle-section .facts, .middle-section .slideshow {
+      width: 100%; }
+    .middle-section .slideshow .arrow {
+      top: 50%; }
+    .middle-section .facts .facts-list {
+      font-size: 3rem; }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   body {
@@ -208,7 +341,36 @@ main {
       height: 50vw;
       margin: 5vh 0; }
   .menu .logo-info, .menu .menu-nav {
-    width: 100vw;
+    width: 50vw;
     background: #100f0f; }
   .menu .logo-info .logo {
-    width: 50vw; } }
+    width: 35vw;
+    height: 25vh; }
+  .season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    .season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      .season-container .grid-container .season-heading .season-description {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        text-align: left;
+        margin: 0 5vw; }
+    .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 45%;
+      margin: 1vh 1vw; }
+  .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    .middle-section .facts, .middle-section .slideshow {
+      width: 80%;
+      margin: 0 10%; }
+    .middle-section .slideshow .arrow {
+      top: 50%; }
+    .middle-section .facts .facts-list {
+      font-size: 3rem; }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1.5rem;
+        line-height: 2rem; } }

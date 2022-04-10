@@ -33,7 +33,56 @@
             width: 50vw;
         }
     }
+    main{
+        &.season-container{
+            text-align: center;
+            padding: 5vh 0;
+
+            .grid-container{
+                .season-heading{
+                    grid-template-areas: 'pic' 'des';
+                    grid-template-columns: 1fr;
+                    
+                    .season-description{
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        text-align: left;
+                        margin: 0 5vw;
+                    }
+                }
+                .seasons-gallery{
+                    .season-pic-container{
+                        .seasonPic{
+                            width: 100%;
+                            margin: 1vh 10vw;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .middle-section{
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            
+            .facts, .slideshow{
+                width: 100%;
+            }
+    
+            .slideshow{
+                .arrow{
+                    top: 10%;
+                }
+            }
+        }
+    }
+
+    
 }
+
+
 @include mediaMd {
     body{
         overflow-x:hidden;
@@ -69,6 +118,60 @@
             width: 50vw;
         }
     }
+
+    .season-container{
+        text-align: center;
+        padding: 5vh 0;
+
+        .grid-container{
+            .season-heading{
+                grid-template-areas: 'pic' 'des';
+                grid-template-columns: 1fr;
+                
+                .season-description{
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    text-align: left;
+                    margin: 0 5vw;
+                }
+            }
+            .seasons-gallery{
+                .season-pic-container{
+                    .seasonPic{
+                        width: 100%;
+                        margin: 1vh 10vw;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .middle-section{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        .facts, .slideshow{
+            width: 100%;
+        }
+
+        .slideshow{
+            .arrow{
+                top: 50%;
+            }
+        }
+
+        .facts{
+            .facts-list{
+                font-size: 3rem;
+
+                .facts-item{
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
 }
 
 @include mediaLg {
@@ -98,15 +201,70 @@
 
     .menu{
         .logo-info, .menu-nav{
-            width: 100vw;
+            width: 50vw;
             background: rgba(darken($primary-color, 5), 1);
         }
 
         .logo-info .logo{
-            width: 50vw;
+            width: 35vw;
+            height: 25vh;
         }
     }
 
+    .season-container{
+        text-align: center;
+        padding: 5vh 0;
+
+        .grid-container{
+            .season-heading{
+                grid-template-areas: 'pic' 'des';
+                grid-template-columns: 1fr;
+                
+                .season-description{
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                    text-align: left;
+                    margin: 0 5vw;
+                }
+            }
+            .seasons-gallery{
+                .season-pic-container{
+                    .seasonPic{
+                        width: 45%;
+                        margin: 1vh 1vw;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .middle-section{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        .facts, .slideshow{
+            width: 80%;
+            margin: 0 10%;
+        }
+
+        .slideshow{
+            .arrow{
+                top: 50%;
+            }
+        }
+
+        .facts{
+            .facts-list{
+                font-size: 3rem;
+
+                .facts-item{
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
 }
 @include mediaXl {
     

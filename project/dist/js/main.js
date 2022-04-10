@@ -28,3 +28,31 @@ const toggleMenu = () =>{
 }
 
 menuBtn.addEventListener('click', toggleMenu)
+
+
+//slideshow
+let index=0
+const pictures = document.querySelectorAll('.seasonPic');
+const arrowBack = document.querySelector('.arrow-back');
+const arrowFront = document.querySelector('.arrow-front');
+let imageToShow= pictures[index]
+let slidePic= document.getElementById('imageSlideshow')
+
+arrowFront.addEventListener('click', ()=>{
+    if(index >= pictures.length-1){
+        index=-1
+    }
+    index++
+    imageToShow= pictures[index]
+    slidePic.src= imageToShow.currentSrc 
+    console.log(index)
+})
+arrowBack.addEventListener('click', ()=>{
+    if(index <= 0){
+        index=pictures.length;
+    }
+    index--
+    imageToShow= pictures[index]
+    slidePic.src= imageToShow.currentSrc
+})
+

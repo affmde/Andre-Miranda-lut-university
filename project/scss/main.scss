@@ -32,7 +32,7 @@ main{
         color: $secondary-color;
     }
 
-    img{
+    .andreMiranda-pic{
         width:40vh;
         border-radius: 50%;
         border: 3px solid $secondary-color;
@@ -46,6 +46,123 @@ main{
 
         &:hover{
             color: $secondary-color;
+        }
+    }
+}
+
+//Seasons grid
+
+.season-container{
+    padding: 4vh 3vw;
+
+    .grid-container{
+        grid-area: 'heading' 'pics';
+        grid-template-columns: 1fr;
+        margin: 10vh auto;
+
+        .season-heading{
+            grid-area: heading;
+            margin: 10vh auto;
+            
+            display: grid;
+            grid-gap: 30px;
+            grid-template-areas: "pic des des";
+            grid-template-columns: repeat(3, 1fr);
+
+            .season-description{
+                grid-area: des;
+                font-size: 1.5rem;
+                line-height: 2rem;
+                font-weight:100;
+                margin: 0;
+            }
+
+            .heading-pic{
+                grid-area: pic;
+                width: 100%;
+            }
+        }
+
+        .seasons-gallery{
+            grid-area: pics;
+
+            display: grid;
+            grid-template-areas: 'title' 'pics';
+            grid-template-rows: 1fr;
+
+            .season-gallery{
+                grid-area: title;
+                color: $secondary-color;
+                text-align: center;
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .season-pic-container{
+                grid-area: pics;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: stretch;
+                justify-items: flex-end;
+    
+
+                .seasonPic{
+                    width: 30%;
+                    margin: 1vh 1vw;
+                }
+
+            }
+        }
+    }
+}
+
+.middle-section{
+    margin: 10vh 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    .facts, .slideshow{
+        width: 50%;
+    }
+
+    .facts{
+        text-align: start;
+        .facts-list{
+            width: 70%;
+            font-size: 3rem;
+            display: flex;
+            flex-direction: column;
+            color: $secondary-color;
+            .facts-item{
+                font-size: 1rem;
+                line-height: 1.2rem;
+                padding: 10px 0;
+                list-style: none;
+                color: set-text-color($primary-color);
+            }
+        }
+    }
+
+    .slideshow{
+        position: relative;
+        #imageSlideshow{
+            width: 100%;
+        }
+        .arrow{
+            position: absolute;
+            top: 50%;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.705);
+            cursor: pointer;
+
+            &:hover{
+                color: white;
+                transform: scale(1.05);
+                @include linearTransition;
+            }
+        }
+        .arrow-front{
+            right: 0;
         }
     }
 }
