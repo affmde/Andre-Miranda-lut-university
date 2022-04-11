@@ -1,30 +1,58 @@
-const menuBtn = document.querySelector('.menu-btn')
-const menu = document.querySelector('.menu');
+const menuBtn = document.querySelector('.menu-btn');
 const menuNav = document.querySelector('.menu-nav');
-const menuBranding = document.querySelector('.menu-branding')
+const menu = document.querySelector('.menu');
+const logo = document.querySelector('.logo-info')
 const navItem = document.querySelectorAll('.nav-item');
+
 
 let showMenu = false;
 
-const toggleMenu = () => {
-    if(showMenu===false){
+const toggleMenu = () =>{
+    if(showMenu === false){
         menuBtn.classList.add('close');
-        menu.classList.add('show');
         menuNav.classList.add('show');
-        menuBranding.classList.add('show');
-        navItem.forEach(item=> item.classList.add('show'))
-        showMenu=true
+        menu.classList.add('show');
+        logo.classList.add('show');
+        navItem.forEach(item=>item.classList.add('show'))
+
+        showMenu = true;
     }else{
         menuBtn.classList.remove('close');
-        menu.classList.remove('show');
         menuNav.classList.remove('show');
-        menuBranding.classList.remove('show');
-        navItem.forEach(item=> item.classList.remove('show'))
+        menu.classList.remove('show');
+        logo.classList.remove('show');
+        navItem.forEach(item=>item.classList.remove('show'))
 
-        showMenu=false
+        showMenu = false;
     }
 }
-menuBtn.addEventListener('click', toggleMenu);
+
+menuBtn.addEventListener('click', toggleMenu)
 
 
+//slideshow
+let index=0
+const pictures = document.querySelectorAll('.seasonPic');
+const arrowBack = document.querySelector('.arrow-back');
+const arrowFront = document.querySelector('.arrow-front');
+let imageToShow= pictures[index]
+let slidePic= document.getElementById('imageSlideshow')
+
+arrowFront.addEventListener('click', ()=>{
+    if(index >= pictures.length-1){
+        index=-1
+    }
+    index++
+    imageToShow= pictures[index]
+    slidePic.src= imageToShow.currentSrc 
+    console.log(index)
+})
+arrowBack.addEventListener('click', ()=>{
+    if(index <= 0){
+        index=pictures.length;
+    }
+    index--
+    imageToShow= pictures[index]
+    slidePic.src= imageToShow.currentSrc
+})
 

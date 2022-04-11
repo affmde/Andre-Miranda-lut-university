@@ -1,83 +1,84 @@
 .menu-btn {
-  position: absolute;
+  position: fixed;
+  top: 30px;
+  right: 30px;
   z-index: 99;
-  right: 35px;
-  top: 35px;
   cursor: pointer;
   transition: all 0.35s linear; }
   .menu-btn .btn-line {
-    width: 28px;
-    height: 3px;
-    margin: 5px 0 5px 0;
     background: white;
+    width: 40px;
+    height: 3px;
+    margin: 10px 0 10px 0;
     transition: all 0.35s linear; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
+      transform: rotate(45deg) translate(9.5px, 8px); }
     .menu-btn.close .btn-line:nth-child(2) {
       display: none; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(0px, -1px); }
+      transform: rotate(-45deg) translate(3px, 3px); }
 
 .menu {
   position: fixed;
   top: 0;
-  width: 100%;
-  visibility: hidden; }
+  right: 0;
+  visibility: hidden;
+  height: 100vh;
+  z-index: 98; }
   .menu.show {
     visibility: visible; }
-  .menu-branding, .menu-nav {
+  .menu .logo-info, .menu .menu-nav {
     display: flex;
     flex-flow: column;
-    align-items: center;
     justify-content: center;
-    float: left;
-    width: 50%;
-    height: 100vh;
+    align-items: center;
+    width: 30vw;
     overflow: hidden;
     transition: all 0.35s linear; }
-  .menu-nav {
+  .menu .menu-nav {
     margin: 0;
     padding: 0;
-    background: rgba(55, 55, 55, 0.9);
-    transform: translate3d(0, -100%, 0); }
-    .menu-nav.show {
+    background: rgba(16, 15, 15, 0.9);
+    transform: translate3d(100%, 0, 0);
+    height: 75vh; }
+    .menu .menu-nav.show {
       transform: translate3d(0, 0, 0); }
-  .menu-branding {
-    background: rgba(68, 68, 68, 0.9);
-    transform: translate3d(0, 100%, 0);
+    .menu .menu-nav .nav-item {
+      list-style: none;
+      margin: 2vh 0; }
+      .menu .menu-nav .nav-item .nav-link {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 1px; }
+        .menu .menu-nav .nav-item .nav-link:hover {
+          color: rgba(115, 218, 60, 0.871);
+          font-weight: 500; }
+  .menu .logo-info {
+    background: rgba(29, 27, 27, 0.9);
+    transform: translate3d(100%, 0, 0);
+    height: 25vh;
     transition: all 0.35s linear; }
-    .menu-branding.show {
+    .menu .logo-info.show {
       transform: translate3d(0, 0, 0); }
-    .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
-      background: url(/dist/img/me.jpg);
+    .menu .logo-info .logo {
+      width: 20vw;
+      height: 18vh;
+      background: url(/dist/img/logo.png);
       background-repeat: no-repeat;
       background-size: cover;
-      border-radius: 50%;
-      border: 3px solid #b1c125; }
+      border: 3px solid rgba(115, 218, 60, 0.871);
+      transition: all 0.35s linear; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.35s linear; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current {
-      color: #b1c125; }
-  .menu .nav-link {
-    display: inline-block;
-    position: relative;
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
-    color: white;
-    text-decoration: none;
-    transition: all 0.35s linear; }
-  .menu .nav-item:hover {
-    color: #b1c125;
-    transition: color 0.1s linear; }
+      color: rgba(115, 218, 60, 0.871); }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -88,184 +89,288 @@
 .nav-item:nth-child(3) {
   transition-delay: 0.3s; }
 
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s; }
+
 body {
-  background: #444;
-  color: white;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
-  body#bg-img {
-    background: url(/dist/img/background.jpg);
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  body#bg-image {
+    background: url(/dist/img/background2.jpg);
     background-repeat: no-repeat;
     background-size: cover; }
   body::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    width: 100%;
     height: 100%;
-    background-color: rgba(68, 68, 68, 0.8);
+    width: 100%;
+    background-color: rgba(29, 27, 27, 0.85);
     z-index: -1; }
-  body li {
-    list-style: none; }
-  body a {
-    text-decoration: none;
-    color: inherit; }
-
-h1 {
-  font-size: 2rem; }
-
-#header {
-  position: relative; }
-  #header li {
-    list-style: none; }
-  #header a {
-    text-decoration: none;
-    color: inherit; }
+  body h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    margin: 5vh 0; }
+  body h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 1px; }
 
 main {
-  padding: 20vh;
-  min-height: calc(100vh-60px); }
-  main h1 {
-    font-size: 5rem; }
-  main h4 {
-    font-size: 1.5rem; }
-  main #homepage-Miranda {
-    color: #b1c125; }
-  main i:hover {
-    color: #b1c125;
-    cursor: pointer; }
-
-#about {
-  padding: 1vh 5vw; }
-
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr); }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: 3px solid #b1c125;
-    width: 250px; }
-  .about-info .bio {
-    grid-area: bio;
-    font-size: 1.5rem; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-2 {
-    grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
-  .about-info .job {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: 5px solid #b1c125; }
-
-#work {
-  padding-top: 1vh; }
-
-.projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
-  .projects .item a img {
-    width: 100%;
-    border: 3px solid white; }
-    .projects .item a img:hover {
-      opacity: 0.5;
-      border: 3px solid #b1c125;
-      transition: all 0.35s linear; }
-
-.btn, .btn-dark, .btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #b1c125;
-    color: black; }
-
-.btn-dark {
-  background: black;
-  color: #fff; }
-
-.btn-light {
-  background: #c4c4c4;
-  color: #fff; }
-
-#contact {
-  padding-top: 1vh; }
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
-  .boxes div {
-    font-size: 2rem;
-    border: 3px solid white;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    transition: all 0.35s linear; }
-    .boxes div span {
-      color: #b1c125; }
-    .boxes div:hover {
-      padding: 0.5rem 1.5rem;
-      background: #b1c125;
-      color: black; }
-      .boxes div:hover span {
-        color: black;
-        transition: all 0.35s linear; }
-
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #2b2b2b;
   color: white;
-  height: 60px; }
+  padding: 5vh 20vw; }
+  main span {
+    color: rgba(115, 218, 60, 0.871); }
+  main .andreMiranda-pic {
+    width: 40vh;
+    border-radius: 50%;
+    border: 3px solid rgba(115, 218, 60, 0.871);
+    margin: 5vh 0; }
+  main .text .icons i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    cursor: pointer; }
+    main .text .icons i:hover {
+      color: rgba(115, 218, 60, 0.871); }
 
-@media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+.season-container {
+  padding: 4vh 3vw; }
+  .season-container .grid-container {
+    grid-area: 'heading' 'pics';
+    grid-template-columns: 1fr;
+    margin: 10vh auto; }
+    .season-container .grid-container .season-heading {
+      grid-area: heading;
+      margin: 10vh auto;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas: "pic des des";
+      grid-template-columns: repeat(3, 1fr); }
+      .season-container .grid-container .season-heading .season-description {
+        grid-area: des;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 100;
+        margin: 0; }
+      .season-container .grid-container .season-heading .heading-pic {
+        grid-area: pic;
+        width: 100%; }
+    .season-container .grid-container .seasons-gallery {
+      grid-area: pics;
+      display: grid;
+      grid-template-areas: 'title' 'pics';
+      grid-template-rows: 1fr; }
+      .season-container .grid-container .seasons-gallery .season-gallery {
+        grid-area: title;
+        color: rgba(115, 218, 60, 0.871);
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 2px; }
+      .season-container .grid-container .seasons-gallery .season-pic-container {
+        grid-area: pics;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        justify-items: flex-end; }
+        .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+          width: 30%;
+          margin: 1vh 1vw; }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+.middle-section {
+  margin: 10vh 10vw;
+  display: flex;
+  flex-wrap: wrap; }
+  .middle-section .facts, .middle-section .slideshow {
+    width: 50%; }
+  .middle-section .facts {
+    text-align: start; }
+    .middle-section .facts .facts-list {
+      width: 70%;
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      color: rgba(115, 218, 60, 0.871); }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 10px 0;
+        list-style: none;
+        color: white; }
+  .middle-section .slideshow {
+    position: relative; }
+    .middle-section .slideshow #imageSlideshow {
+      width: 100%; }
+    .middle-section .slideshow .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.705);
+      cursor: pointer; }
+      .middle-section .slideshow .arrow:hover {
+        color: white;
+        transform: scale(1.05);
+        transition: all 0.35s linear; }
+    .middle-section .slideshow .arrow-front {
+      right: 0; }
 
-@media screen and (max-width: 768px) {
-  main {
-    text-align: center;
-    align-items: center; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
-    background: #373737; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      height: 25vh;
-      width: 25vh; }
-  .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; }
-  .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+.main-footer {
+  height: 5vh;
+  background: rgba(3, 2, 2, 0.692);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 @media screen and (max-width: 500px) {
-  .projects {
-    grid-template-columns: 1fr; } }
+  body {
+    overflow-x: hidden;
+    text-align: center;
+    height: 100%; }
+    body h1 {
+      font-size: 3rem;
+      margin: 0; }
+    body h2 {
+      font-size: 1.3rem; }
+  main {
+    padding: 15vh 5vw;
+    min-height: 100vh; }
+    main img {
+      width: 50vw;
+      height: 50vw;
+      margin: 5vh 0; }
+  .menu .logo-info, .menu .menu-nav {
+    width: 100vw;
+    background: #100f0f; }
+  .menu .logo-info .logo {
+    width: 50vw; }
+  main.season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    main.season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      main.season-container .grid-container .season-heading .season-description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: left;
+        margin: 0 5vw; }
+    main.season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 100%;
+      margin: 1vh 10vw; }
+  main .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    main .middle-section .facts, main .middle-section .slideshow {
+      width: 100%; }
+    main .middle-section .slideshow .arrow {
+      top: 10%; } }
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    text-align: center;
+    height: 100%; }
+    body h1 {
+      font-size: 4rem;
+      margin: 0; }
+    body h2 {
+      font-size: 1.3rem; }
+  main {
+    padding: 15vh 5vw;
+    min-height: 100vh; }
+    main img {
+      width: 50vw;
+      height: 50vw;
+      margin: 5vh 0; }
+  .menu .logo-info, .menu .menu-nav {
+    width: 100vw;
+    background: #100f0f; }
+  .menu .logo-info .logo {
+    width: 50vw; }
+  .season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    .season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      .season-container .grid-container .season-heading .season-description {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: left;
+        margin: 0 5vw; }
+    .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 100%;
+      margin: 1vh 10vw; }
+  .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    .middle-section .facts, .middle-section .slideshow {
+      width: 100%; }
+    .middle-section .slideshow .arrow {
+      top: 50%; }
+    .middle-section .facts .facts-list {
+      font-size: 3rem; }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  body {
+    overflow-x: hidden;
+    text-align: center;
+    height: 100%; }
+    body h1 {
+      font-size: 5rem;
+      margin: 0; }
+    body h2 {
+      font-size: 2rem; }
+  main {
+    padding: 15vh 5vw;
+    min-height: 100vh; }
+    main img {
+      width: 50vw;
+      height: 50vw;
+      margin: 5vh 0; }
+  .menu .logo-info, .menu .menu-nav {
+    width: 50vw;
+    background: #100f0f; }
+  .menu .logo-info .logo {
+    width: 35vw;
+    height: 25vh; }
+  .season-container {
+    text-align: center;
+    padding: 5vh 0; }
+    .season-container .grid-container .season-heading {
+      grid-template-areas: 'pic' 'des';
+      grid-template-columns: 1fr; }
+      .season-container .grid-container .season-heading .season-description {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        text-align: left;
+        margin: 0 5vw; }
+    .season-container .grid-container .seasons-gallery .season-pic-container .seasonPic {
+      width: 45%;
+      margin: 1vh 1vw; }
+  .middle-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    .middle-section .facts, .middle-section .slideshow {
+      width: 80%;
+      margin: 0 10%; }
+    .middle-section .slideshow .arrow {
+      top: 50%; }
+    .middle-section .facts .facts-list {
+      font-size: 3rem; }
+      .middle-section .facts .facts-list .facts-item {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
