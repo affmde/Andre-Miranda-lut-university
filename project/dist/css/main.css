@@ -67,7 +67,7 @@
     .menu .logo-info .logo {
       width: 20vw;
       height: 18vh;
-      background: url(/dist/img/logo.png);
+      background-image: url(/dist/img/logo.png);
       background-repeat: no-repeat;
       background-size: cover;
       border: 3px solid rgba(115, 218, 60, 0.871);
