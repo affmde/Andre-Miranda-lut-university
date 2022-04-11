@@ -1,6 +1,7 @@
 $primary-color: rgba(29, 27, 27, 0.692);
 $secondary-color: rgba(115, 218, 60, 0.871);
-$bgImg: url('/dist/img/background2.jpg');
+$logo: url('https://i.postimg.cc/Z5nZXVmx/logo.pnghttps://postimg.cc/WhBQkmhd');
+$bgImg: url('https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
 $useBgImg: true;
 
 @function set-text-color($color){
@@ -18,7 +19,7 @@ $useBgImg: true;
 @mixin background {
     @if $useBgImg{
         &#bg-image{
-        background: $bgImg;
+        background-image: $bgImg;
         background-repeat: no-repeat;
         background-size: cover;
         }

@@ -67,7 +67,7 @@
     .menu .logo-info .logo {
       width: 20vw;
       height: 18vh;
-      background-image: url("/dist/img/logo.png");
+      background: url("https://i.postimg.cc/Z5nZXVmx/logo.pnghttps://postimg.cc/WhBQkmhd");
       background-repeat: no-repeat;
       background-size: cover;
       border: 3px solid rgba(115, 218, 60, 0.871);
@@ -101,7 +101,7 @@ body {
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
   body#bg-image {
-    background: url("/dist/img/background2.jpg");
+    background-image: url("https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
     background-repeat: no-repeat;
     background-size: cover; }
   body::after {
