@@ -67,7 +67,7 @@
     .menu .logo-info .logo {
       width: 20vw;
       height: 18vh;
-      background-image: url(/dist/img/logo.png);
+      background-image: url("/dist/img/logo.png");
       background-repeat: no-repeat;
       background-size: cover;
       border: 3px solid rgba(115, 218, 60, 0.871);
@@ -101,7 +101,7 @@ body {
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
   body#bg-image {
-    background: url(/dist/img/background2.jpg);
+    background: url("/dist/img/background2.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
   body::after {

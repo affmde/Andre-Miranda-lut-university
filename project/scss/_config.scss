@@ -1,6 +1,6 @@
 $primary-color: rgba(29, 27, 27, 0.692);
 $secondary-color: rgba(115, 218, 60, 0.871);
-$bgImg: url(/dist/img/background2.jpg);
+$bgImg: url('/dist/img/background2.jpg');
 $useBgImg: true;
 
 @function set-text-color($color){
